@@ -1,0 +1,83 @@
+<html>
+
+<body>
+  <header>
+    <title>Image Posting Page</title>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
+      <div class="container">
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" rel="noopener" target="_blank" href="../HTML/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" rel="noopener" target="_blank" href="../HTML/login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" rel="noopener" target="_blank" href="../HTML/register.html">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/postimage.html">Post Image</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/viewpost.html">View Image</a>
+          </li>
+        </ul>
+        <!-- Links -->
+        <form class="form-inline">
+          <div class="md-form my-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          </div>
+        </form>
+      </div>
+    </nav>
+    <!--/.Navbar-->
+    Upload your image here!
+  </header>
+
+
+  <!--Main layout-->
+
+  <main>
+    <form action="" method="post">
+      <div class="container">
+        <br>
+
+        <label for="title"><b>Title</b></label>
+        <input type="text" placeholder="Document Title" name="title" required>
+        <br>
+
+        <p>
+          Upload an image:
+          <input type="file" id="imageFile" accept="image/*" />
+        </p>
+
+        <label for="description"><b>Description</b></label>
+        <input type="text" placeholder="Enter a Description" name="description" required>
+        <br>
+        <br>
+
+        <a href="#">
+          <input type="checkbox" id="aup" name="aup" required>
+          <label for="AUP">Acceptable Use Policy</label>
+        </a>
+        <br>
+        <br>
+        <button type="submit">Upload</button>
+      </div>
+    </form>
+  </main>
+
+  <!--Main layout-->
+
+  <!--Footer-->
+
+  <footer>
+    Footer
+  </footer>
+
+  <!--Footer-->
+</body>
+
+</html>
