@@ -8,11 +8,11 @@ Please follow the instructions below and fill in the information requested when 
 
 ## Student Information
 
-|               | Information   |
-|:-------------:|:-------------:|
-| Student Name  | Jacob Lawrence|
-| Student ID    | id-here       |
-| Student Email | email-here    |
+|               | Information        |
+|:-------------:|:-------------:     |
+| Student Name  | Jacob Lawrence     |
+| Student ID    | 922384785          |
+| Student Email | jlawrence2@sfsu.edu|
 
 
 
