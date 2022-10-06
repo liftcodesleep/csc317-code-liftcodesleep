@@ -1,8 +1,57 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+h1 {
+  text-shadow: none;
+  font-size: 60px;
+  text-align: center;
+  margin: 0;
 }
 
-a {
-  color: #00B7FF;
+header img {
+  height: 80px;
+}
+
+.navbar {
+  text-shadow: none;
+  font-size: 20;
+}
+
+.login {
+  text-shadow: none;
+}
+
+.upload {
+  /* text-shadow: none; */
+}
+
+body {
+  text-align: center;
+  background-image: url('https://thumbs.gfycat.com/AdorableLonelyAiredaleterrier-size_restricted.gif');
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-size: 30;
+  color: white;
+  /* text-shadow: black -3px 2px 2px; */
+
+  text-shadow:
+    0.05em 0 black,
+    0 0.05em black,
+    -0.05em 0 black,
+    0 -0.05em black,
+    -0.05em -0.05em black,
+    -0.05em 0.05em black,
+    0.05em -0.05em black,
+    0.05em 0.05em black;
+  /* color offset-x offset-y blur-radius */
+}
+
+.footernav {
+  text-shadow: none;
+  /* background-color: black; */
+  position: fixed;
+  top: 900px;
+  left: 750px;
+  text-align: center;
+  font-size: 22;
 }

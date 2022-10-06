@@ -2,32 +2,23 @@
 
 <body>
   <header>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Image Posting Page</title>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
-      <div class="container">
+      <div class="navbar">
         <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" rel="noopener" target="_blank" href="../HTML/index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="noopener" target="_blank" href="../HTML/login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="noopener" target="_blank" href="../HTML/register.html">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/postimage.html">Post Image</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/viewpost.html">View Image</a>
-          </li>
-        </ul>
+        <a class="nav-link" rel="noopener" target="_blank" href="../HTML/index.html">Home</a>
+        <a class="nav-link" rel="noopener" target="_blank" href="../HTML/login.html">Login</a>
+        <a class="nav-link" rel="noopener" target="_blank" href="../HTML/register.html">Register</a>
+        <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/postimage.html">Post Image</a>
+        <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/viewpost.html">View Image</a>
+        <br><br><br>
         <!-- Links -->
+
         <form class="form-inline">
-          <div class="md-form my-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <div class="searchbar">
+            <input class="searchbar" type="text" placeholder="Search" aria-label="Search">
           </div>
         </form>
       </div>
@@ -41,10 +32,10 @@
 
   <main>
     <form action="" method="post">
-      <div class="container">
+      <div class="upload">
         <br>
 
-        <label for="title"><b>Title</b></label>
+        <label for="title"><b>Title: </b></label>
         <input type="text" placeholder="Document Title" name="title" required>
         <br>
 
@@ -72,9 +63,18 @@
   <!--Main layout-->
 
   <!--Footer-->
-
   <footer>
-    Footer
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Zlatan_Ibrahimovi%C4%87_June_2018.jpg" alt="footer">
+    <br>
+    <div class="footernav">
+      <a class="nav-link" rel="noopener" target="_blank" href="../HTML/index.html">Home</a>
+      <a class="nav-link" rel="noopener" target="_blank" href="../HTML/login.html">Login</a>
+      <a class="nav-link" rel="noopener" target="_blank" href="../HTML/register.html">Register</a>
+      <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/postimage.html">Post Image</a>
+      <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/viewpost.html">View Image</a>
+
+    </div>
   </footer>
 
   <!--Footer-->
