@@ -1,80 +1,81 @@
 <html>
-<header>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Registering Page</title>
 
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
-    <div class="navbar">
-      <!-- Links -->
+<body>
+  <header>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>Registering Page</title>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
+      <div class="navbar">
+        <!-- Links -->
+        <a class="nav-link" rel="noopener" target="_blank" href="../HTML/index.html">Home</a>
+        <a class="nav-link" rel="noopener" target="_blank" href="../HTML/login.html">Login</a>
+        <a class="nav-link" rel="noopener" target="_blank" href="../HTML/register.html">Register</a>
+        <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/postimage.html">Post Image</a>
+        <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/viewpost.html">View Image</a>
+        <br><br><br>
+        <!-- Links -->
+
+        <form class="form-inline">
+          <div class="searchbar">
+            <input class="searchbar" type="text" placeholder="Search" aria-label="Search">
+          </div>
+        </form>
+      </div>
+    </nav>
+    <!--/.Navbar-->
+
+    <h1>Register now!</h1>
+  </header>
+
+  <main>
+    <form action="action_page.php" method="post">
+      <div class="registerInfo">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+        <br>
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="email" required>
+        <br>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        <br>
+        <label for="cpsw"><b>Confirm Password</b></label>
+        <input type="password" placeholder="Confirm Password" name="cpsw" required>
+        <br>
+        <label>
+          <input type="checkbox" checked="checked" name="13+"> I am 13 years of age or older
+        </label>
+        <br>
+        <button type="submit">Register</button>
+        <button type="button" class="cancelbtn">Cancel</button>
+      </div>
+      <div class="forgot">
+        <span class="psw"> <a href="../HTML/Login.html">Forgot password?</a></span>
+      </div>
+      <a href="#">
+        <input type="checkbox" id="tc" name="tc" required>
+        <label for="tc">Terms and Conditions</label>
+      </a>
+    </form>
+  </main>
+  <!--Footer-->
+  <footer>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Zlatan_Ibrahimovi%C4%87_June_2018.jpg" alt="footer">
+    <br>
+    <div class="footernav">
       <a class="nav-link" rel="noopener" target="_blank" href="../HTML/index.html">Home</a>
       <a class="nav-link" rel="noopener" target="_blank" href="../HTML/login.html">Login</a>
       <a class="nav-link" rel="noopener" target="_blank" href="../HTML/register.html">Register</a>
       <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/postimage.html">Post Image</a>
       <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/viewpost.html">View Image</a>
-      <br><br><br>
-      <!-- Links -->
 
-      <form class="form-inline">
-        <div class="searchbar">
-          <input class="searchbar" type="text" placeholder="Search" aria-label="Search">
-        </div>
-      </form>
     </div>
-  </nav>
-  <!--/.Navbar-->
+  </footer>
 
-  <h1>Register now!</h1>
-</header>
-
-
-
-<body>
-  <form action="action_page.php" method="post">
-    <div class="registerInfo">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-      <br>
-      <label for="email"><b>Email</b></label>
-      <input type="email" placeholder="Enter Email" name="email" required>
-      <br>
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-      <br>
-      <label for="cpsw"><b>Confirm Password</b></label>
-      <input type="password" placeholder="Confirm Password" name="cpsw" required>
-      <br>
-      <label>
-        <input type="checkbox" checked="checked" name="13+"> I am 13 years of age or older
-      </label>
-      <br>
-      <button type="submit">Register</button>
-      <button type="button" class="cancelbtn">Cancel</button>
-    </div>
-    <div class="forgot">
-      <span class="psw"> <a href="../HTML/Login.html">Forgot password?</a></span>
-    </div>
-    <a href="#">
-      <input type="checkbox" id="tc" name="tc" required>
-      <label for="tc">Terms and Conditions</label>
-    </a>
-  </form>
+  <!--Footer-->
 </body>
 
 </html>
-<!--Footer-->
-<footer>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Zlatan_Ibrahimovi%C4%87_June_2018.jpg" alt="footer">
-  <br>
-  <div class="footernav">
-    <a class="nav-link" rel="noopener" target="_blank" href="../HTML/index.html">Home</a>
-    <a class="nav-link" rel="noopener" target="_blank" href="../HTML/login.html">Login</a>
-    <a class="nav-link" rel="noopener" target="_blank" href="../HTML/register.html">Register</a>
-    <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/postimage.html">Post Image</a>
-    <a class="nav-link" rel="noopener" target="_blank" href="..//HTML/viewpost.html">View Image</a>
-
-  </div>
-</footer>
-
-<!--Footer-->
