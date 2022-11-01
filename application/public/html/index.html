@@ -32,7 +32,7 @@
   <main>
     <div id="count">
       <button type="button" onclick="loadXMLDoc()">
-        Click to display Images
+        Display Images
       </button>
     </div>
     <div id="demo"></div>
@@ -52,7 +52,17 @@
                         <img
                         src=${obj.url}
                         width="600"
-                        height="400"
+                        height="600"
+                        />
+                        <img
+                        src=${obj.url + 1}
+                        width="600"
+                        height="600"
+                        />
+                        <img
+                        src=${obj.url}
+                        width="600"
+                        height="600"
                         />
                     <div class="desc">${obj.title}</div>
                     </div>`;
