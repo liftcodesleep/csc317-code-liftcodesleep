@@ -3,6 +3,15 @@
 <body>
   <!--Main Navigation-->
   <header>
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script>
+      // compile the template
+      var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+      // execute the compiled template and print the output to the console
+      console.log(template({ doesWhat: "rocks!" }));
+    </script>
+
     <script defer type="text/javascript" src="/application/public/js/registration.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <!--Navbar-->
@@ -42,31 +51,18 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
-            var x = JSON.parse(this.responseText);
-            num = x.length;
-            document.getElementById("count").innerHTML = `${num} Photos`;
-            x.forEach((obj) => {
-              document.getElementById(
-                "demo"
-              ).innerHTML += `<div id=${obj.id} class="gallery" onclick="fadeOut(${obj.id})">
-                        <img
-                        src=${obj.url}
-                        width="600"
-                        height="600"
-                        />
-                        <img
-                        src=${obj.url + 1}
-                        width="600"
-                        height="600"
-                        />
-                        <img
-                        src=${obj.url}
-                        width="600"
-                        height="600"
-                        />
+            var daGetz = JSON.parse(this.responseText);
+            num = daGetz.length;
+
+            daGetz.forEach((obj) => {
+              document.getElementById("demo").innerHTML += `<div id=${obj.id} class="gallery" onclick="fadeOut(${obj.id})">
+                        <img src=${obj.url} width="600" height="600"/>
+                        <img src=${obj.url} width="600" height="600"/>
+                        <img src=${obj.url} width="600" height="600"/>
                     <div class="desc">${obj.title}</div>
                     </div>`;
             });
+            document.getElementById("count").innerHTML = `${num} Photos`;
           }
         };
 

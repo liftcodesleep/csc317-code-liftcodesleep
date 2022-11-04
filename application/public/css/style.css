@@ -22,6 +22,23 @@ header img {
   /* text-shadow: none; */
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item-left {
+  flex: 33%;
+}
+
+.flex-item-center {
+  flex: 33%
+}
+
+.flex-item-right {
+  flex: 33%;
+}
+
 body {
   text-align: center;
   background-image: url('https://thumbs.gfycat.com/AdorableLonelyAiredaleterrier-size_restricted.gif');
@@ -42,6 +59,7 @@ body {
     0.05em -0.05em black,
     0.05em 0.05em black;
   /* color offset-x offset-y blur-radius */
+
 }
 
 .footernav {
