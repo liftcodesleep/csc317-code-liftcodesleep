@@ -7,7 +7,7 @@ const logger = require("morgan");
 const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-
+{/* <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script> */ }
 const app = express();
 
 app.engine(
@@ -42,10 +42,10 @@ app.use("/users", usersRouter); // route middleware from ./routes/users.js
  * Catch all route, if we get to here then the 
  * resource requested could not be found.
  */
-app.use((req,res,next) => {
+app.use((req, res, next) => {
   next(createError(404, `The route ${req.method} : ${req.url} does not exist.`));
 })
-  
+
 
 /**
  * Error Handler, used to render the error html file
