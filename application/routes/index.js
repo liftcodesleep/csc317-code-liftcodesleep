@@ -8,7 +8,6 @@ router.get('/', function (req, res, next) {
 });
 router.get('/registration', function (req, res) {
   res.sendFile(path.join(__dirname + '/registration.html'));
-  //__dirname : It will resolve to your project folder.
 });
 router.get("/postimage", function (req, res) {
   res.render('postimage');
