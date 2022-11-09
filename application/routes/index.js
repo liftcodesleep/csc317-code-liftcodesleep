@@ -6,13 +6,16 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'CSC 317 App', name: "Jacob Lawrence" });
 });
-router.get('/registration', function (req, res) {
-  res.sendFile(path.join(__dirname + '/registration.html'));
+router.get("/login", function (req, res) {
+  res.render('login');
+})
+router.get("/register", function (req, res) {
+  res.render('register');
 });
 router.get("/postimage", function (req, res) {
   res.render('postimage');
 });
-router.get("posts/:id(//d+)", function (req, res) {
+router.get("/viewpost", function (req, res) {
   res.render('viewpost');
 });
 
