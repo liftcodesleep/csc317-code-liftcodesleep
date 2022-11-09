@@ -7,7 +7,6 @@ const logger = require("morgan");
 const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-{/* <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script> */ }
 const app = express();
 
 app.engine(
