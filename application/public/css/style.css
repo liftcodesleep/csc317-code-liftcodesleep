@@ -9,17 +9,40 @@ header img {
   height: 80px;
 }
 
-.navbar {
+.upload {
+  background-color: black;
+  width: 22%;
+  position: relative;
+  top: 100px;
+  margin: auto;
+  font-size: x-large;
+}
+
+.navbarH {
+  background-color: black;
   text-shadow: none;
   font-size: 20;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbarF {
+  background-color: black;
+  text-shadow: none;
+  font-size: 20;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+button {
+  position: relative;
+  top: 100px;
 }
 
 .login {
   text-shadow: none;
-}
-
-.upload {
-  /* text-shadow: none; */
 }
 
 .flex-container {
@@ -60,14 +83,4 @@ body {
     0.05em 0.05em black;
   /* color offset-x offset-y blur-radius */
 
-}
-
-.footernav {
-  text-shadow: none;
-  /* background-color: black; */
-  position: fixed;
-  top: 900px;
-  left: 750px;
-  text-align: center;
-  font-size: 22;
 }
