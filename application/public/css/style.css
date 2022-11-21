@@ -43,6 +43,13 @@ button {
 
 .login {
   text-shadow: none;
+
+  background-color: black;
+  width: 22%;
+  position: relative;
+  top: 100px;
+  margin: auto;
+  font-size: x-large;
 }
 
 .flex-container {
