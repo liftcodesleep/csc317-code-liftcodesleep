@@ -15,6 +15,9 @@ router.get("/register", function (req, res) {
 router.get("/postimage", function (req, res) {
   res.render('postimage');
 });
+router.get("/posts/:id(\\d+)", function (req, res) {
+  res.render('viewpost', { js: ["viewpost.js"] });
+});
 router.get("/viewpost", function (req, res) {
   res.render('viewpost');
 });

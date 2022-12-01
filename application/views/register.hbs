@@ -9,34 +9,42 @@
   </header>
 
   <main>
-    <form action="/users/register" method="post">
-      <div class="registerInfo">
+    <form id="reg-form" action="/users/register" method="POST" enctype="application/x-www-form-urlencoded">
+      <div class="register">
         <label for="uname"><b>Username</b></label>
+        <br>
         <input type="text" placeholder="Enter Username" name="uname" required>
         <br>
+
         <label for="email"><b>Email</b></label>
+        <br>
         <input type="email" placeholder="Enter Email" name="email" required>
         <br>
+
         <label for="psw"><b>Password</b></label>
+        <br>
         <input type="password" placeholder="Enter Password" name="psw" required>
         <br>
+
         <label for="cpsw"><b>Confirm Password</b></label>
+        <br>
         <input type="password" placeholder="Confirm Password" name="cpsw" required>
         <br>
-        <label>
-          <input type="checkbox" checked="checked" name="13+"> I am 13 years of age or older
-        </label>
+
+        <label for="13+">I am 13 years of age or older</label>
+        <input type="checkbox" id="13+" required>
+        <br>
+        <a href="#">
+          <label for="tc">Terms and Conditions</label>
+          <input type="checkbox" id="tc" name="tc" required>
+        </a>
         <br>
         <button type="submit">Register</button>
         <button type="button" class="cancelbtn">Cancel</button>
+
       </div>
-      <div class="forgot">
-        <span class="psw"> <a href="../login">Forgot password?</a></span>
-      </div>
-      <a href="#">
-        <input type="checkbox" id="tc" name="tc" required>
-        <label for="tc">Terms and Conditions</label>
-      </a>
+      {{> forgotPW}}
+
     </form>
   </main>
 </body>

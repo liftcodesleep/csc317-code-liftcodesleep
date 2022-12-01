@@ -42,28 +42,27 @@ That's a quick breakdown of the basic steps! --}}
   <h1>Login</h1>
 
   <div class="login">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-    <br>
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-    <br>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-    <br>
-    <button type="submit" onclick="Login()">Login</button>
-    <script>
-      function Login() {
-        //do login stuff
-      }
-    </script>
-    <button type="button" class="cancelbtn">Cancel</button>
+    <header class="form-header">
+    </header>
+    <form id="login-form" class="input-form" action="/users/login" method="POST"
+      enctype="application/x-www-form-urlencoded">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+      <br>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <br>
+      <label>
+        <input type="checkbox" name="remember"> Remember me
+      </label>
+      <br>
+      <button type="submit" onclick="Login()">Login</button>
+      <button type="button" class="cancelbtn">Cancel</button>
+    </form>
   </div>
 
-  <div class="forgot">
-    <span class="psw"> <a href="../views/login.hbs">Forgot password?</a></span>
-  </div>
+
+  {{> forgotPW}}
 
 
   <form action="../views/index.hbs" method="post">
