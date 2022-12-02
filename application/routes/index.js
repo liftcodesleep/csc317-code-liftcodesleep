@@ -1,4 +1,5 @@
 var express = require('express');
+const { isLoggedIn } = require('../middleware/protectors');
 const path = require('path');
 var router = express.Router();
 
@@ -12,7 +13,7 @@ router.get("/login", function (req, res) {
 router.get("/register", function (req, res) {
   res.render('register');
 });
-router.get("/postimage", function (req, res) {
+router.get("/postimage", isLoggedIn, function (req, res) {
   res.render('postimage');
 });
 router.get("/posts/:id(\\d+)", function (req, res) {
@@ -21,5 +22,8 @@ router.get("/posts/:id(\\d+)", function (req, res) {
 router.get("/viewpost", function (req, res) {
   res.render('viewpost');
 });
+router.get("/logout", function (req, res) {
+  res.render('login');
+})
 
 module.exports = router;

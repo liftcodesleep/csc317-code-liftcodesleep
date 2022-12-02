@@ -2,7 +2,7 @@
 
 <body>
   <header>
-    <script defer type="text/javascript" src="/public/js/registration.js"></script>
+    <script defer type="text/javascript" src="../public/js/registration.js"></script>
     <title>Registering Page</title>
 
     <h1>Register now!</h1>
@@ -11,9 +11,9 @@
   <main>
     <form id="reg-form" action="/users/register" method="POST" enctype="application/x-www-form-urlencoded">
       <div class="register">
-        <label for="uname"><b>Username</b></label>
+        <label for="username"><b>Username</b></label>
         <br>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        <input type="text" placeholder="Enter Username" name="username" required>
         <br>
 
         <label for="email"><b>Email</b></label>
@@ -21,9 +21,9 @@
         <input type="email" placeholder="Enter Email" name="email" required>
         <br>
 
-        <label for="psw"><b>Password</b></label>
+        <label for="password"><b>Password</b></label>
         <br>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" placeholder="Enter Password" name="password" required>
         <br>
 
         <label for="cpsw"><b>Confirm Password</b></label>
@@ -39,7 +39,7 @@
           <input type="checkbox" id="tc" name="tc" required>
         </a>
         <br>
-        <button type="submit">Register</button>
+        <button type="submit" onclick="pwValidation()">Register</button>
         <button type="button" class="cancelbtn">Cancel</button>
 
       </div>

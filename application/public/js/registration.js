@@ -1,8 +1,8 @@
 function pwValidation() {
   var username = document.getElementById("username").value;
   var email = document.getElementById("email").value;
-  var password = document.getElementById("pass").value;
-  var passValidation = document.getElementById("passValidation").value;
+  var password = document.getElementById("password").value;
+  var cpsw = document.getElementById("cpsw").value;
   var response = document.getElementById("message");
   var error = "";
   console.log("You clicked on submit."); var passwordCheck = false;
@@ -38,7 +38,7 @@ function pwValidation() {
     error +=
       "Password must contain one of the following characters: /*-+!@#$^&*.<br>";
   }
-  else if (password !== passValidation) {
+  else if (password !== cpsw) {
     error += "Both passwords must be identical!";
   } else {
     passwordCheck = true;
