@@ -19,18 +19,20 @@ header img {
 }
 
 .navbarH {
+  font-size: xx-large;
   background-color: black;
   text-shadow: none;
-  font-size: 20;
+  text-align: center;
   position: fixed;
   top: 0;
   width: 100%;
+  height: 5%;
 }
 
 .navbarF {
   background-color: black;
   text-shadow: none;
-  font-size: 20;
+  font-size: large;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -43,9 +45,9 @@ button {
 
 .login {
   text-shadow: none;
-
+  text-align: left;
   background-color: black;
-  width: 22%;
+  width: 25%;
   position: relative;
   top: 100px;
   margin: auto;

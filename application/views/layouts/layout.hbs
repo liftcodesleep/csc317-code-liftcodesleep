@@ -8,7 +8,9 @@
 
 </head>
 {{> navbarH}}
-{{log (nonEmptyObject messages)}}
+{{#if (nonEmptyObject messages)}}
+{{> flashmessage}}
+{{/if}}
 
 <body>
   {{#if isLoggedIn}}
