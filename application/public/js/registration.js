@@ -35,15 +35,14 @@ function pwValidation() {
     error += "Password must contain at least one number.<br>";
   }
   else if (!specialchar.test(password)) {
-    error +=
-      "Password must contain one of the following characters: /*-+!@#$^&*.<br>";
+    error += "Password must contain one of the following characters: /*-+!@#$^&*.<br>";
   }
   else if (password !== cpsw) {
     error += "Both passwords must be identical!";
   } else {
     passwordCheck = true;
   } if (passwordCheck && usernameCheck) {
-    document.getElementById("myForm").submit();
+    document.getElementById("reg-form").submit();
   } else {
     response.innerHTML = error;
     response.style.color = "red";

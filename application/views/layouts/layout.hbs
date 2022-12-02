@@ -8,11 +8,11 @@
 
 </head>
 {{> navbarH}}
-{{#if (nonEmptyObject messages)}}
-{{> flashmessage}}
-{{/if}}
 
 <body>
+  {{#if (nonEmptyObject messages)}}
+  {{> flashmessage}}
+  {{/if}}
   {{#if isLoggedIn}}
   <script>
     document.getElementById('logout-button')
