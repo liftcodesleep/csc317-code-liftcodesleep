@@ -21,7 +21,7 @@ app.engine(
     defaultLayout: "layout", //default layout for app, general template for all pages in app
     helpers: {
       nonEmptyObject: function (obj) {
-        return (obj && obj.constructor == Object && Object.keys(obj).length > 0)
+        return !(obj && obj.constructor == Object && Object.keys(obj).length == 0)
       }
     }, //adding new helpers to handlebars for extra functionality
   })

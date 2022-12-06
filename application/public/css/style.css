@@ -11,7 +11,7 @@ header img {
 
 .upload {
   background-color: black;
-  width: 22%;
+  width: 25%;
   position: relative;
   top: 100px;
   margin: auto;
@@ -31,11 +31,12 @@ header img {
 
 .navbarF {
   background-color: black;
+  text-align: center;
   text-shadow: none;
   font-size: large;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 75%;
 }
 
 button {
@@ -93,9 +94,28 @@ button {
   flex: 33%;
 }
 
+.home {
+  /* font-size: x-large; */
+  text-align: left;
+  margin-left: 20px;
+  /* background: url(https://m.media-amazon.com/images/I/51RZjTHw0NL._AC_SY200_QL15_.jpg) no-repeat 0px / 130px; */
+  /* width: 137px; */
+}
+
+.logout-button {
+  text-align: right;
+}
+
+.Navbar-loggedOut {
+  font-size: larger;
+  text-align: right;
+  position: relative;
+  right: 40px;
+}
+
 body {
   text-align: center;
-  background-image: url('https://thumbs.gfycat.com/AdorableLonelyAiredaleterrier-size_restricted.gif');
+  background-image: url('https://addons-media.operacdn.com/media/CACHE/images/themes/74/230074/1.0-rev1/images/47bd9945c0570a1254700f7509d33cf8/9ac579d7b9d25bfeca811ce59133e2d3.jpg');
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
