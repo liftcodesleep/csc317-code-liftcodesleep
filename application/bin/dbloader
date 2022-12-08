@@ -37,7 +37,17 @@ async function makeDatabase(connection) {
 async function makeUsersTable(connection) {
   const [result, _] = await connection.query(
     // Users Table SQL Goes here
-    `
+    `CREATE TABLE IF NOT EXISTS user (
+      userId int NOT NULL AUTO_INCREMENT,
+      username varchar(64) NOT NULL,
+      email varchar(128) NOT NULL,
+      password varchar(255) NOT NULL,
+      createdAt datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY (userId),
+      UNIQUE KEY idusersTable_UNIQUE (userId),
+      UNIQUE KEY userName_UNIQUE (username),
+      UNIQUE KEY userEmail_UNIQUE (email)
+    ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
     `
   );
 
@@ -52,7 +62,19 @@ async function makeUsersTable(connection) {
 async function makePostsTable(connection) {
   const [result, _] = await connection.query(
     // Posts Table SQL Goes here
-    ``
+    `CREATE TABLE IF NOT EXISTS posts (
+      id int NOT NULL AUTO_INCREMENT,
+      title varchar(128) NOT NULL,
+      createdAt datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      fk_authorId int NOT NULL,
+      image varchar(4096) NOT NULL,
+      thumbnail varchar(4096) NOT NULL,
+      description text NOT NULL,
+      PRIMARY KEY (id),
+      UNIQUE KEY postID_UNIQUE (id),
+      KEY postAuthor_idx (fk_authorId),
+      CONSTRAINT postAuthor FOREIGN KEY (fk_authorId) REFERENCES user (userId)
+    ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci`
   );
   if (result && result.warningStatus > 0) {
     const [warningResult, _] = await connection.query("SHOW WARNINGS");
@@ -65,7 +87,20 @@ async function makePostsTable(connection) {
 async function makeCommentsTable(connection) {
   const [result, _] = await connection.query(
     // Comments Table SQL Goes here
-    ` 
+    `
+    CREATE TABLE IF NOT EXISTS comments (
+      id int NOT NULL AUTO_INCREMENT,
+      text text NOT NULL,
+      fk_authorId int NOT NULL,
+      fk_postId int NOT NULL,
+      createdAt datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY (id),
+      UNIQUE KEY id_UNIQUE (id),
+      KEY commentPost_idx (fk_postId),
+      KEY commentAuthor_idx (fk_authorId),
+      CONSTRAINT commentAuthor FOREIGN KEY (fk_authorId) REFERENCES user (userId) ON DELETE CASCADE ON UPDATE CASCADE,
+      CONSTRAINT commentPost FOREIGN KEY (fk_postId) REFERENCES posts (id) ON DELETE CASCADE ON UPDATE CASCADE
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci 
     `
   );
   if (result && result.warningStatus > 0) {
@@ -82,7 +117,7 @@ async function makeCommentsTable(connection) {
     connection = await getConnection();
     await makeDatabase(connection); // make DB
     //TODO make sure to change yourdbnamehere
-    await connection.query("squid"); // set new DB to the current DB
+    await connection.query("USE squid"); // set new DB to the current DB
     await makeUsersTable(connection); // try to make user table
     await makePostsTable(connection); // try to make posts table
     await makeCommentsTable(connection); // try to make comments table
