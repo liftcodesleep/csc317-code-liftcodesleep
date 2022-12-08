@@ -1,12 +1,28 @@
 h1 {
-  text-shadow: none;
   font-size: 60px;
   text-align: center;
   margin: 0;
+  text-decoration: underline;
 }
 
-header img {
-  height: 80px;
+*:hover {
+  outline: 1px blue solid;
+}
+
+
+.navbarH {
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
+  font-size: xx-large;
+  background-color: black;
+  height: 50px;
+}
+
+
+.logout-button {
+  float: inline-end;
+  margin-right: 20px;
 }
 
 .upload {
@@ -18,30 +34,54 @@ header img {
   font-size: x-large;
 }
 
-.navbarH {
-  font-size: xx-large;
-  background-color: black;
-  text-shadow: none;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 5%;
+.posting-box {
+  clear: both;
 }
 
-.navbarF {
-  background-color: black;
-  text-align: center;
-  text-shadow: none;
-  font-size: large;
-  position: fixed;
-  bottom: 0;
-  width: 75%;
-}
-
-button {
+.post-author-date {
+  display: inline;
   position: relative;
-  top: 100px;
+}
+
+.image-container {
+  width: 80%;
+}
+
+.comment-button {
+  font-size: large;
+}
+
+.recentPosts {
+  position: relative;
+  width: 200px;
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.recentPosts div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: black;
+  color: white;
+  margin-bottom: 5px;
+  font-family: sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.recentPosts:hover {
+  cursor: pointer;
+}
+
+.recentPosts:hover div {
+  width: 150px;
+  padding: 8px 15px;
+  visibility: visible;
+  opacity: 0.7;
 }
 
 .login {
@@ -50,79 +90,121 @@ button {
   background-color: black;
   width: 25%;
   position: relative;
-  top: 100px;
   margin: auto;
   font-size: x-large;
 }
 
+
 .register {
-  text-shadow: none;
+  /* text-shadow: none; */
   text-align: center;
   background-color: black;
-  width: 25%;
+  width: 45%;
   position: relative;
-  top: 100px;
   margin: auto;
   font-size: x-large;
 }
 
 .forgot {
   text-shadow: none;
-
   background-color: black;
   width: 25%;
   position: relative;
-  top: 100px;
+  bottom: 0px;
   margin: auto;
   font-size: x-large;
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.flex-item-left {
-  flex: 33%;
-}
-
-.flex-item-center {
-  flex: 33%
-}
-
-.flex-item-right {
-  flex: 33%;
-}
-
 .home {
-  /* font-size: x-large; */
-  text-align: left;
+  float: left;
   margin-left: 20px;
-  /* background: url(https://m.media-amazon.com/images/I/51RZjTHw0NL._AC_SY200_QL15_.jpg) no-repeat 0px / 130px; */
-  /* width: 137px; */
 }
 
-.logout-button {
-  text-align: right;
+.search-bar {
+  display: inline;
+}
+
+
+#flash-message {
+  Width: 100%;
+  height: 10%;
+  color: whitesmoke;
+  font-size: 2em;
+  text-align: center;
+  position: absolute;
+  animation: fadeOut 5s;
+  -webkit-animation: fadeOut 5s;
+  -moz-animation: fadeOut 5s;
+  -o-animation: fadeOut 5s;
+  -ms-animation: fadeOut 5s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .Navbar-loggedOut {
-  font-size: larger;
-  text-align: right;
-  position: relative;
+  float: inline-end;
   right: 40px;
+  top: 0px;
 }
 
 body {
   text-align: center;
-  background-image: url('https://addons-media.operacdn.com/media/CACHE/images/themes/74/230074/1.0-rev1/images/47bd9945c0570a1254700f7509d33cf8/9ac579d7b9d25bfeca811ce59133e2d3.jpg');
-  background-size: cover;
+  background-image: url('https://wallpaperaccess.com/full/2200501.jpg');
   background-attachment: fixed;
   height: 100vh;
   padding: 0;
   margin: 0;
   font-size: 30;
   color: white;
+  opacity: 100%;
   text-shadow:
     0.05em 0 black,
     0 0.05em black,

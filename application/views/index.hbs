@@ -1,18 +1,22 @@
 <html>
+<br>
+<br>
+<br>
+<br>
 
 <body>
+  <h1>Recent Posts</h1>
+  <br>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
 
   <!--Main layout-->
 
   <main>
     {{#each results}}
-    <div>
-      <img src="{{this.thumbnail}}" alt="">
-      <p>{{this.title}}</p>
-      <p>{{this.description}}</p>
-      <a href="/posts/{{this.id}}">Details</a>
-    </div>>
+    <div class="recentPosts">
+      <a href="/posts/{{this.id}}"><img src="{{this.thumbnail}}" alt=""></a>
+      <div>{{this.title}}</div>
+    </div>
     {{/each}}
   </main>
 

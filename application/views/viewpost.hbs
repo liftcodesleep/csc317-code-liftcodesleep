@@ -1,35 +1,41 @@
 <html>
+<script defer type="text/javascript" src="../public/js/viewpost.js"></script>
 
 <body>
   <header>
     <title>Post Viewing Page</title>
-    Check out this sweet post!
   </header>
-
   <!--Main Navigation-->
 
   <!--Main layout-->
 
   <main>
     <!-- title -->
-    "Sweet Post"<br>
-    <img src="https://i1.sndcdn.com/artworks-000382107042-dwbw6b-t500x500.jpg" alt="Sweet Post">
+    <div class="posting-box">
+      <p> {{currentPost.title}} by {{currentPost.username}}</p>
 
-    <p>
-      <!-- Post Author -->
-      By: Richard Post
-      <br>
-      <br>
-      <!-- Timestamp -->
-      Post's Timestamp
-      <br>
+      <img class="image-container" src="/{{currentPost.image}}" />
 
-      <img src="https://timeandtidewatches.com/wp-content/uploads/2020/03/Screen-Shot-2020-03-06-at-9.53.11-am.png"
-        width="600" height="660" alt="Post's Timestamp">
-    </p>
+      {{!-- description --}}
+      {{currentPost.description}}
+
+      <div class="post-author-date">
+        <p class="author">{{currentPost.username}}</p>
+        <p class="date-posted">{{formatDate currentPost.createdAt}}</p>
+      </div>
+      <form action="">
+        <div class="comment-section">
+          <div class="comment-box">
+            <textarea id="comment-text" class="comment-box-text" style="resize: none;" cols="80"></textarea>
+            <input type="button" class="comment-button" id="comment-button" value="Comment"
+              data-postid="{{currentPost.id}}" aria-hidden="true">
+          </div>
+          <div class="comments">
+            {{!-- place comments --}}
+          </div>
+      </form>
+    </div>
   </main>
-
-  <!--Main layout-->
 
 
 
