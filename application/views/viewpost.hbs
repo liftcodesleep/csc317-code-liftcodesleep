@@ -1,5 +1,6 @@
 <html>
 <script defer type="text/javascript" src="../public/js/viewpost.js"></script>
+<script defer type="text/javascript" src="../public/js/comment.js"></script>
 
 <body>
   <header>
@@ -23,6 +24,8 @@
         <p class="author">{{currentPost.username}}</p>
         <p class="date-posted">{{formatDate currentPost.createdAt}}</p>
       </div>
+      {{#if isLoggedIn}}
+
       <form action="">
         <div class="comment-section">
           <div class="comment-box">
@@ -30,8 +33,15 @@
             <input type="button" class="comment-button" id="comment-button" value="Comment"
               data-postid="{{currentPost.id}}" aria-hidden="true">
           </div>
-          <div class="comments">
-            {{!-- place comments --}}
+          {{else}}
+          <div class="loginToComment">
+            <a href="/login">Log in to join the conversation!</a>
+          </div>
+          {{/if}}
+          <div class="comments" id="comment-list">
+            {{#each currentPost.comments}}
+            {{> comment}}
+            {{/each}}
           </div>
       </form>
     </div>

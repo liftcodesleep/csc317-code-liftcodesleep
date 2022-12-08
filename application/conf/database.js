@@ -9,4 +9,5 @@ const pool = mysql.createPool({
   waitForConnections: true
 })
 const promisePool = pool.promise();
+
 module.exports = promisePool;

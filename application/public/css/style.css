@@ -9,6 +9,9 @@ h1 {
   outline: 1px blue solid;
 }
 
+.loginToComment {
+  font-size: xx-large;
+}
 
 .navbarH {
   /* position: fixed; */
