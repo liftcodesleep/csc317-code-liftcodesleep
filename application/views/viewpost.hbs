@@ -1,6 +1,5 @@
 <html>
 <script defer type="text/javascript" src="../public/js/viewpost.js"></script>
-<script defer type="text/javascript" src="../public/js/comment.js"></script>
 
 <body>
   <header>
@@ -29,7 +28,8 @@
       <form action="">
         <div class="comment-section">
           <div class="comment-box">
-            <textarea id="comment-text" class="comment-box-text" style="resize: none;" cols="80"></textarea>
+            <textarea id="comment-text" class="comment-box-text" style="resize: none;" cols="80"
+              placeholder="Leave a comment" onfocus="this.value=''"></textarea>
             <input type="button" class="comment-button" id="comment-button" value="Comment"
               data-postid="{{currentPost.id}}" aria-hidden="true">
           </div>

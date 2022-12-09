@@ -30,7 +30,7 @@ module.exports = {
     let baseSQL = `select c.id, c.text, c.createdAt, u.username
     FROM comments c
     JOIN user u
-    ON c.fk_authorId
+    ON c.fk_authorId=u.userId
     WHERE fk_postId=?;`
     db.execute(baseSQL, [postId])
       .then(function ([results, fields]) {
