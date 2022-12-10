@@ -12,9 +12,13 @@
   <main>
     <!-- title -->
     <div class="posting-box">
-      <p> {{currentPost.title}} by {{currentPost.username}}</p>
 
-      <img class="image-container" src="/{{currentPost.image}}" />
+      <div class="title-frame" id="title-frame">
+        {{currentPost.title}} <br> {{currentPost.username}}
+      </div>
+      <div class="image-frame">
+        <img class="image-container" src="/{{currentPost.image}}" />
+      </div>
 
       {{!-- description --}}
       {{currentPost.description}}

@@ -5,9 +5,9 @@ h1 {
   text-decoration: underline;
 }
 
-*:hover {
+/* *:hover {
   outline: 1px blue solid;
-}
+} */
 
 .loginToComment {
   font-size: xx-large;
@@ -37,13 +37,27 @@ h1 {
   font-size: x-large;
 }
 
+
 .posting-box {
-  clear: both;
+  position: relative;
+  top: 100px;
+}
+
+.title-frame {
+  text-align: left;
+  position: relative;
+  left: 80px;
 }
 
 .post-author-date {
   display: inline;
   position: relative;
+}
+
+.image-frame {
+  background-color: black;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
 .image-container {
@@ -54,33 +68,52 @@ h1 {
   font-size: large;
 }
 
-.recentPosts {
+.thumbnail-sheet {
   position: relative;
-  width: 200px;
   float: left;
-  margin-right: 10px;
+  max-height: 200px;
+  width: 250px;
   margin-left: 10px;
+  margin-right: 10px;
+  background-color: black;
+  overflow: hidden;
 }
 
-.recentPosts div {
+.recentPosts {
+  position: relative;
+  margin: 40px 25px;
+  float: left;
+  overflow: hidden;
+}
+
+.thumbnail-title-link {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  background: black;
+  top: 0;
+  left: 0;
+  background-color: white;
   color: white;
-  margin-bottom: 5px;
   font-family: sans-serif;
+  font-size: large;
+  text-shadow:
+    0.05em 0 black,
+    0 0.05em black,
+    -0.05em 0 black,
+    0 -0.05em black,
+    -0.05em -0.05em black,
+    -0.05em 0.05em black,
+    0.05em -0.05em black,
+    0.05em 0.05em black;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: visibility 0s, opacity 0.5s linear;
   transition: visibility 0s, opacity 0.5s linear;
 }
 
-.recentPosts:hover {
+.thumbnail-sheet:hover {
   cursor: pointer;
 }
 
-.recentPosts:hover div {
+.thumbnail-sheet:hover div {
   width: 150px;
   padding: 8px 15px;
   visibility: visible;
@@ -99,11 +132,9 @@ h1 {
 
 
 .register {
-  /* text-shadow: none; */
   text-align: center;
   background-color: black;
   width: 45%;
-  position: relative;
   margin: auto;
   font-size: x-large;
 }
@@ -140,6 +171,7 @@ h1 {
   -moz-animation: fadeOut 5s;
   -o-animation: fadeOut 5s;
   -ms-animation: fadeOut 5s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeOut {

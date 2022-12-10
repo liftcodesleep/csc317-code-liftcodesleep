@@ -13,9 +13,11 @@
 
   <main>
     {{#each results}}
-    <div class="recentPosts">
-      <a href="/posts/{{this.id}}"><img src="/{{this.thumbnail}}" alt=""></a>
-      <div>{{this.title}}</div>
+    <div class="thumbnail-sheet" id="thumbnail-sheet">
+      <div class="recentPosts">
+        <a href="/posts/{{this.id}}"><img src="/{{this.thumbnail}}" alt=""></a>
+      </div>
+      <div class="thumbnail-title-link"><a href="/posts/{{this.id}}">{{this.title}}</a></div>
     </div>
     {{/each}}
   </main>

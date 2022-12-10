@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 const db = require('../conf/database');
 const bcrypt = require('bcrypt');
-const UserError = require('../helpers/error/UserError')
+const UserError = require('../helpers/error/UserError');
+const RegisterError = require('../helpers/error/RegisterError');
+const flash = require('express-flash');
+
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   res.send('respond with a resource');
@@ -17,18 +20,21 @@ router.post("/register", function (req, res, next) {
         return db.query('select email from user where email=?', [email])
       }
       else {
-        throw new Error('Username already exists')
+        throw new RegisterError('Username already exists', '/register', 200)
       }
-    }).then(function ([results, fields]) {
+    })
+    .then(function ([results, fields]) {
       if (results && results.length == 0) {
         return bcrypt.hash(password, 2);
       }
       else {
-        throw new Error('Email already exists')
+        throw new Error('Email already exists', '/register', 200)
       }
-    }).then(function (hashedPassword) {
+    })
+    .then(function (hashedPassword) {
       return db.execute('insert into user (username, email, password) value (?,?,?)', [username, email, hashedPassword])
-    }).then(function ([results, fields]) {
+    })
+    .then(function ([results, fields]) {
       if (results && results.affectedRows) {
         res.redirect('/login');
       }
@@ -36,11 +42,18 @@ router.post("/register", function (req, res, next) {
         throw new Error('User could not be made');
       }
     })
-
     .catch(function (err) {
-      // res.redirect('/register');
-      next(err);
+      if (err instanceof RegisterError) {
+        req.flash("error", err.getMessage());
+        req.session.save(function (saveErr) {
+          res.redirect(err.getRedirectURL());
+        })
+      }
+      else {
+        next(err);
+      }
     })
+
 });
 router.post("/login", function (req, res, next) {
   const { username, password } = req.body;
