@@ -39,14 +39,31 @@ h1 {
 
 
 .posting-box {
-  position: relative;
+  position: absolute;
   top: 100px;
 }
 
 .title-frame {
+  background-color: black;
   text-align: left;
   position: relative;
   left: 80px;
+  max-width: fit-content;
+}
+
+.username-frame {
+  background-color: greenyellow;
+  max-width: fit-content;
+}
+
+.image-frame {
+  background-color: black;
+  margin: 0 80px;
+}
+
+.image-container {
+  margin-top: 25px;
+  width: 80%;
 }
 
 .post-author-date {
@@ -54,15 +71,7 @@ h1 {
   position: relative;
 }
 
-.image-frame {
-  background-color: black;
-  margin-left: 80px;
-  margin-right: 80px;
-}
 
-.image-container {
-  width: 80%;
-}
 
 .comment-button {
   font-size: large;
@@ -158,6 +167,9 @@ h1 {
   display: inline;
 }
 
+#footer {
+  position: sticky;
+}
 
 #flash-message {
   Width: 100%;

@@ -14,15 +14,17 @@
     <div class="posting-box">
 
       <div class="title-frame" id="title-frame">
-        {{currentPost.title}} <br> {{currentPost.username}}
+        <div class="username-frame">
+          Posted by: {{currentPost.title}}
+        </div>
+        <br> {{currentPost.username}}
       </div>
       <div class="image-frame">
         <img class="image-container" src="/{{currentPost.image}}" />
       </div>
-
-      {{!-- description --}}
-      {{currentPost.description}}
-
+      <div class="post-description">
+        {{currentPost.description}}
+      </div>
       <div class="post-author-date">
         <p class="author">{{currentPost.username}}</p>
         <p class="date-posted">{{formatDate currentPost.createdAt}}</p>
@@ -50,8 +52,8 @@
       </form>
     </div>
   </main>
+</body>
 
-
-
+<footer></footer>
 
 </html>
