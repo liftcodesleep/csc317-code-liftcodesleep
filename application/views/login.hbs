@@ -33,15 +33,12 @@ passwords.
 That's a quick breakdown of the basic steps! --}}
 
 <body>
-
   <header>
     <title>Login Page</title>
   </header>
   <h1>Login</h1>
 
   <div class="login">
-    <header class="form-header">
-    </header>
     <form id="login-form" class="input-form" action="/users/login" method="POST"
       enctype="application/x-www-form-urlencoded">
       <label for="username"><b>Username</b></label>
@@ -54,13 +51,9 @@ That's a quick breakdown of the basic steps! --}}
         <input type="checkbox" name="remember">
       </label>
       <br>
-      <button type="submit" onclick="Login()">Login</button>
-      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit">Login</button>
     </form>
   </div>
-
-  </form>
-
 </body>
 <footer>
   <div class="Forgot">

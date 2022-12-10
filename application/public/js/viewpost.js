@@ -11,7 +11,6 @@ function addNewComment(data) {
   commentList.append(newComment.content);
   document.getElementById(`message-${data.commentId}`).scrollIntoView();
 }
-
 document.getElementById('comment-button')
   .addEventListener('click', function (ev) {
     let commentTextElement = document.getElementById('comment-text');
@@ -19,6 +18,7 @@ document.getElementById('comment-button')
     let postId = ev.currentTarget.dataset.postid;
 
     if (!commentText) return;
+    document.getElementById("comment-text").value = "";
 
     fetch("/comments/create", {
       method: "POST",
@@ -30,5 +30,5 @@ document.getElementById('comment-button')
     })
       .then(response => response.json())
       .then(res_json => console.log(res_json))
-    // addNewComment(res_json.data);
+    addNewComment(res_json.data);
   })

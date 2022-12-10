@@ -1,14 +1,15 @@
 <html>
 
-<body>
-  <header>
-    <title>Image Posting Page</title>
-    Upload your image here!
-  </header>
+<header>
+  <title>Image Posting Page</title>
+</header>
 
+<body>
 
   <!--Main layout-->
-
+  <h1>
+    Upload your image here!
+  </h1>
   <main>
     <form id="post-image" class="input-form" action="/posts/create" method="post" enctype="multipart/form-data">
       <div class="upload">
@@ -19,7 +20,6 @@
         <br>
 
         <p>
-          Upload an image:
           <input type="file" id="imageFile" accept="image/*" name="uploadImage" />
         </p>
 

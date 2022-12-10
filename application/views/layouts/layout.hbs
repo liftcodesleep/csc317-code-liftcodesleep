@@ -9,36 +9,39 @@
 </head>
 {{> navbarH}}
 
-<body>
-  <div class="page-container">
-    {{#if (nonEmptyObject messages)}}
-    <div class="flash-text">
-      {{> flashmessage}}
+{{#if (nonEmptyObject messages)}}
+<div class="flash-text">
+  {{> flashmessage}}
+</div>
+{{/if}}
+<div class="flash-spacer">
+
+  <body>
+    <div class="page-container">
+      {{#if isLoggedIn}}
+      <script>
+        document.getElementById('logout-button')
+          .addEventListener('click', function (ev) {
+            fetch('/users/logout', { method: "POST" })
+              .then(response => response.json())
+              .then(function (res_json) {
+                console.log(res.json);
+                window.location.replace('/');
+              })
+              .catch(err => console.log(err));
+          })
+      </script>
+      {{/if}}
+
+      {{{body}}}
+
+      <footer>
+        {{> footer}}
+
+      </footer>
     </div>
-    {{/if}}
-    {{#if isLoggedIn}}
-    <script>
-      document.getElementById('logout-button')
-        .addEventListener('click', function (ev) {
-          fetch('/users/logout', { method: "POST" })
-            .then(response => response.json())
-            .then(function (res_json) {
-              console.log(res.json);
-              window.location.replace('/');
-            })
-            .catch(err => console.log(err));
-        })
-    </script>
-    {{/if}}
+  </body>
 
-    {{{body}}}
-
-  </div>
-  <footer>
-    {{> footer}}
-
-  </footer>
-</body>
-
+</div>
 
 </html>

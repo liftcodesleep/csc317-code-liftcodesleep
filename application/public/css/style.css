@@ -5,12 +5,9 @@ h1 {
   text-decoration: underline;
 }
 
-/* *:hover {
-  outline: 1px blue solid;
-} */
-
 .loginToComment {
   font-size: xx-large;
+  margin-bottom: 20px;
 }
 
 .comment-section {
@@ -27,6 +24,9 @@ h1 {
   text-align: left;
   position: relative;
   margin-bottom: 10px;
+  background-color: rgb(72, 72, 72);
+  max-width: fit-content;
+
 }
 
 .comment {
@@ -39,11 +39,11 @@ h1 {
 
 .comments {
   text-align: left;
-  min-height: 300px;
+  min-height: 100px;
 }
 
 .comment-author {
-  background-color: aqua;
+  background-color: green;
 }
 
 .comment-date {
@@ -84,6 +84,7 @@ h1 {
 }
 
 .post-frame {
+  background-color: black;
   text-align: left;
   position: relative;
   left: 80px;
@@ -109,8 +110,9 @@ h1 {
 }
 
 .post-description {
+  padding-top: 40px;
   text-align: center;
-  background-color: gray;
+  min-height: 100px;
 }
 
 
@@ -239,6 +241,10 @@ h1 {
   animation-fill-mode: forwards;
 }
 
+.flash-spacer {
+  padding-top: 72px;
+}
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -323,6 +329,9 @@ body {
 
 }
 
+.page-container {
+  padding-bottom: 100px;
+}
 
 .footer-info {
   position: fixed;

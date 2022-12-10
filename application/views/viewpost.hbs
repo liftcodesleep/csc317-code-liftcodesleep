@@ -5,30 +5,27 @@
   <header>
     <title>Post Viewing Page</title>
   </header>
-  <!--Main Navigation-->
-
-  <!--Main layout-->
-
   <main>
-    <!-- title -->
     <div class="posting-box">
-
       <div class="post-frame" id="post-frame">
-        <div class="username-frame">
-          By: {{currentPost.username}}
-        </div>
+        <br>
         <div class="title-frame">
           {{currentPost.title}}
         </div>
+        <br>
+        <div class="username-frame">
+          Posted by: {{currentPost.username}}
+        </div>
+        <br>
         <p class="date-posted">Posted: {{formatDate currentPost.createdAt}}</p>
       </div>
       <div class="image-frame">
         <img class="image-container" src="/{{currentPost.image}}" />
       </div>
-      <span class="post-description"> {{currentPost.description}} </span>
+      <div class="post-description"> {{currentPost.description}}
+      </div>
       <div class="comment-section">
         {{#if isLoggedIn}}
-
         <form action="">
           <div class="comment-box">
             <textarea id="comment-text" class="comment-box-text" style="resize: none;" cols="80"
@@ -56,6 +53,5 @@
   </main>
 </body>
 <footer></footer>
-
 
 </html>
