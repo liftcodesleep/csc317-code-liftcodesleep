@@ -13,8 +13,44 @@ h1 {
   font-size: xx-large;
 }
 
+.comment-section {
+  margin: auto;
+  width: 50%;
+  background-color: gray;
+  max-width: fit-content;
+}
+
+.comments-count {
+  text-decoration: underline;
+  font-size: large;
+  font-weight: bold;
+  text-align: left;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.comment {
+  background-color: rgb(100, 100, 100);
+}
+
+.comment:hover {
+  background-color: rgb(114, 114, 114);
+}
+
+.comments {
+  text-align: left;
+  min-height: 300px;
+}
+
+.comment-author {
+  background-color: aqua;
+}
+
+.comment-date {
+  text-align: right;
+}
+
 .navbarH {
-  /* position: fixed; */
   top: 0;
   width: 100%;
   font-size: xx-large;
@@ -28,6 +64,10 @@ h1 {
   margin-right: 20px;
 }
 
+.logout-button::after {
+  clear: both;
+}
+
 .upload {
   background-color: black;
   width: 25%;
@@ -39,12 +79,11 @@ h1 {
 
 
 .posting-box {
-  position: absolute;
+  position: relative;
   top: 100px;
 }
 
-.title-frame {
-  background-color: black;
+.post-frame {
   text-align: left;
   position: relative;
   left: 80px;
@@ -52,8 +91,11 @@ h1 {
 }
 
 .username-frame {
-  background-color: greenyellow;
   max-width: fit-content;
+}
+
+.title-frame {
+  text-align: center;
 }
 
 .image-frame {
@@ -66,11 +108,10 @@ h1 {
   width: 80%;
 }
 
-.post-author-date {
-  display: inline;
-  position: relative;
+.post-description {
+  text-align: center;
+  background-color: gray;
 }
-
 
 
 .comment-button {
@@ -88,11 +129,19 @@ h1 {
   overflow: hidden;
 }
 
+.thumbnail-sheet::after {
+  clear: both;
+}
+
 .recentPosts {
   position: relative;
   margin: 40px 25px;
   float: left;
   overflow: hidden;
+}
+
+.recentPosts::after {
+  clear: both;
 }
 
 .thumbnail-title-link {
@@ -163,12 +212,16 @@ h1 {
   margin-left: 20px;
 }
 
+.home::after {
+  clear: both;
+}
+
 .search-bar {
   display: inline;
 }
 
-#footer {
-  position: sticky;
+.search-bar::after {
+  clear: both;
 }
 
 #flash-message {
@@ -242,7 +295,12 @@ h1 {
   top: 0px;
 }
 
+.Navbar-loggedOut::after {
+  clear: both;
+}
+
 body {
+  position: relative;
   text-align: center;
   background-image: url('https://wallpaperaccess.com/full/2200501.jpg');
   background-attachment: fixed;
@@ -263,4 +321,13 @@ body {
     0.05em 0.05em black;
   /* color offset-x offset-y blur-radius */
 
+}
+
+
+.footer-info {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
+  background-color: black;
 }

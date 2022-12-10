@@ -13,47 +13,49 @@
     <!-- title -->
     <div class="posting-box">
 
-      <div class="title-frame" id="title-frame">
+      <div class="post-frame" id="post-frame">
         <div class="username-frame">
-          Posted by: {{currentPost.title}}
+          By: {{currentPost.username}}
         </div>
-        <br> {{currentPost.username}}
+        <div class="title-frame">
+          {{currentPost.title}}
+        </div>
+        <p class="date-posted">Posted: {{formatDate currentPost.createdAt}}</p>
       </div>
       <div class="image-frame">
         <img class="image-container" src="/{{currentPost.image}}" />
       </div>
-      <div class="post-description">
-        {{currentPost.description}}
-      </div>
-      <div class="post-author-date">
-        <p class="author">{{currentPost.username}}</p>
-        <p class="date-posted">{{formatDate currentPost.createdAt}}</p>
-      </div>
-      {{#if isLoggedIn}}
+      <span class="post-description"> {{currentPost.description}} </span>
+      <div class="comment-section">
+        {{#if isLoggedIn}}
 
-      <form action="">
-        <div class="comment-section">
+        <form action="">
           <div class="comment-box">
             <textarea id="comment-text" class="comment-box-text" style="resize: none;" cols="80"
               placeholder="Leave a comment" onfocus="this.value=''"></textarea>
             <input type="button" class="comment-button" id="comment-button" value="Comment"
               data-postid="{{currentPost.id}}" aria-hidden="true">
           </div>
-          {{else}}
-          <div class="loginToComment">
-            <a href="/login">Log in to join the conversation!</a>
-          </div>
-          {{/if}}
-          <div class="comments" id="comment-list">
-            {{#each currentPost.comments}}
-            {{> comment}}
-            {{/each}}
-          </div>
-      </form>
+        </form>
+        {{else}}
+        <div class="loginToComment">
+          <a href="/login">Log in to join the conversation!</a>
+        </div>
+        {{/if}}
+        <div class="comments-count">
+          {{currentPost.comments.length}} COMMENT(S)
+        </div>
+
+        <div class="comments" id="comment-list">
+          {{#each currentPost.comments}}
+          {{> comment}}
+          {{/each}}
+        </div>
+      </div>
     </div>
   </main>
 </body>
-
 <footer></footer>
+
 
 </html>

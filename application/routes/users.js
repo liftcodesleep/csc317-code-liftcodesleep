@@ -28,7 +28,7 @@ router.post("/register", function (req, res, next) {
         return bcrypt.hash(password, 2);
       }
       else {
-        throw new Error('Email already exists', '/register', 200)
+        throw new RegisterError('Email already exists', '/register', 200)
       }
     })
     .then(function (hashedPassword) {

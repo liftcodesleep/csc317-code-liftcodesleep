@@ -1,13 +1,14 @@
 function pwValidation() {
-  var username = document.getElementById("username").value;
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-  var cpsw = document.getElementById("cpsw").value;
-  var response = document.getElementById("message");
-  var error = "";
-  console.log("You clicked on submit."); var passwordCheck = false;
-  var usernameCheck = false;
-  var aplhanum = /^[a-z0-9]+$/;
+  const username = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const cpsw = document.getElementById("cpsw").value;
+  const response = document.getElementById("message");
+  const error = "";
+  console.log("You clicked on submit.");
+  const passwordCheck = false;
+  const usernameCheck = false;
+  const aplhanum = /^[a-z0-9]+$/;
   if (
     ("a" > username[0] || username[0] > "z") &&
     ("A" > username[0] || username[0] > "Z")
@@ -20,9 +21,9 @@ function pwValidation() {
   } else {
     usernameCheck = true;
   }
-  var num = /[0-9]/;
-  var uppercase = /[A-Z]/;
-  var specialchar = /[/*-+!@#$^&*]/;
+  const num = /[0-9]/;
+  const uppercase = /[A-Z]/;
+  const specialchar = /[/*-+!@#$^&*]/;
   if (password.length < 8) {
     console.log("I am in length test");
     error += "Password must be 8 or more characters.<br>";
@@ -48,3 +49,4 @@ function pwValidation() {
     response.style.color = "red";
   }
 }
+

@@ -10,30 +10,35 @@
 {{> navbarH}}
 
 <body>
+  <div class="page-container">
+    {{#if (nonEmptyObject messages)}}
+    <div class="flash-text">
+      {{> flashmessage}}
+    </div>
+    {{/if}}
+    {{#if isLoggedIn}}
+    <script>
+      document.getElementById('logout-button')
+        .addEventListener('click', function (ev) {
+          fetch('/users/logout', { method: "POST" })
+            .then(response => response.json())
+            .then(function (res_json) {
+              console.log(res.json);
+              window.location.replace('/');
+            })
+            .catch(err => console.log(err));
+        })
+    </script>
+    {{/if}}
 
-  {{#if (nonEmptyObject messages)}}
-  {{> flashmessage}}
-  {{/if}}
-  {{#if isLoggedIn}}
-  <script>
-    document.getElementById('logout-button')
-      .addEventListener('click', function (ev) {
-        fetch('/users/logout', { method: "POST" })
-          .then(response => response.json())
-          .then(function (res_json) {
-            console.log(res.json);
-            window.location.replace('/');
-          })
-          .catch(err => console.log(err));
-      })
-  </script>
-  {{/if}}
+    {{{body}}}
 
-  {{{body}}}
+  </div>
+  <footer>
+    {{> footer}}
+
+  </footer>
 </body>
 
-<footer>
-  {{> footer}}
-</footer>
 
 </html>

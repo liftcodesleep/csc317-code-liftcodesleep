@@ -9,7 +9,8 @@
 
   <main>
     <div class="register">
-      <form id="reg-form" method="POST" action="../users/register" enctype="application/x-www-form-urlencoded">
+      <form id="reg-form" method="POST" action="../users/register" enctype="application/x-www-form-urlencoded"
+        onsubmit="pwValidation()">
         <label for="username"><b>Username</b></label>
         <br>
         <input id="username" type="text" placeholder="Enter Username" name="username" required>
@@ -41,9 +42,10 @@
         </a>
         <br>
         <input type="submit" value="Register"></input>
+
+      </form>
     </div>
 
-    </form>
   </main>
 </body>
 <footer>
