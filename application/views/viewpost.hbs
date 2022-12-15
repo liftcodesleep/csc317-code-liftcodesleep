@@ -8,16 +8,13 @@
   <main>
     <div class="posting-box">
       <div class="post-frame" id="post-frame">
-        <br>
         <div class="title-frame">
           {{currentPost.title}}
         </div>
-        <br>
         <div class="username-frame">
-          Posted by: {{currentPost.username}}
+          {{currentPost.username}}
         </div>
-        <br>
-        <p class="date-posted">Posted: {{formatDate currentPost.createdAt}}</p>
+        <p class="date-posted">{{formatDate currentPost.createdAt}}</p>
       </div>
       <div class="image-frame">
         <img class="image-container" src="/{{currentPost.image}}" />

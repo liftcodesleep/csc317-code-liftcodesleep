@@ -36,6 +36,7 @@ router.post("/register", function (req, res, next) {
     })
     .then(function ([results, fields]) {
       if (results && results.affectedRows) {
+        req.flash('success', `Thank you for registering, ${username}`);
         res.redirect('/login');
       }
       else {

@@ -1,3 +1,7 @@
+/* *:hover {
+  outline: 1px blue solid;
+} */
+
 h1 {
   font-size: 60px;
   text-align: center;
@@ -13,7 +17,7 @@ h1 {
 .comment-section {
   margin: auto;
   width: 50%;
-  background-color: gray;
+  background-color: green;
   max-width: fit-content;
 }
 
@@ -40,6 +44,7 @@ h1 {
 .comments {
   text-align: left;
   min-height: 100px;
+  padding-bottom: 10px;
 }
 
 .comment-author {
@@ -48,6 +53,12 @@ h1 {
 
 .comment-date {
   text-align: right;
+  position: relative;
+  right: 0;
+}
+
+.error-box {
+  font-size: medium;
 }
 
 .navbarH {
@@ -84,23 +95,29 @@ h1 {
 }
 
 .post-frame {
-  background-color: black;
+  /* background-color: black; */
   text-align: left;
   position: relative;
-  left: 80px;
+  left: 250px;
   max-width: fit-content;
 }
 
 .username-frame {
   max-width: fit-content;
+  font-size: small;
 }
 
 .title-frame {
-  text-align: center;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: left;
+}
+
+.date-posted {
+  font-size: small;
 }
 
 .image-frame {
-  background-color: black;
   margin: 0 80px;
 }
 
@@ -120,7 +137,12 @@ h1 {
   font-size: large;
 }
 
-.thumbnail-sheet {
+/*
+
+ *:hover {
+  outline: 1px blue solid;
+}
+ .thumbnail-sheet {
   position: relative;
   float: left;
   max-height: 200px;
@@ -131,9 +153,7 @@ h1 {
   overflow: hidden;
 }
 
-.thumbnail-sheet::after {
-  clear: both;
-}
+
 
 .recentPosts {
   position: relative;
@@ -142,18 +162,65 @@ h1 {
   overflow: hidden;
 }
 
+*/
+
+.recentPosts {
+  /* position: relative; */
+  display: flex;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.recentPosts:hover {
+  margin: 13px;
+}
+
 .recentPosts::after {
   clear: both;
 }
 
+.thumbnail-sheet:hover {
+  cursor: pointer;
+}
+
+.thumbnail-sheet:hover div {
+  /* width: 150px; */
+  /* padding: 8px 15px; */
+  /* margin: 10px; */
+  visibility: visible;
+  opacity: 0.7;
+}
+
+.thumbnail-sheet::after {
+  clear: both;
+}
+
+.index-container {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.thumbnail-sheet {
+  display: flex;
+  align-content: center;
+  position: relative;
+  /*needed for title link*/
+  overflow: hidden;
+  height: 200px;
+  max-width: 200px;
+  margin: 20px 20px;
+  outline: 2px black solid;
+}
+
 .thumbnail-title-link {
+  background-color: black;
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: white;
+  bottom: 0;
+  left: 5px;
   color: white;
   font-family: sans-serif;
-  font-size: large;
+  font-size: xx-large;
   text-shadow:
     0.05em 0 black,
     0 0.05em black,
@@ -169,16 +236,6 @@ h1 {
   transition: visibility 0s, opacity 0.5s linear;
 }
 
-.thumbnail-sheet:hover {
-  cursor: pointer;
-}
-
-.thumbnail-sheet:hover div {
-  width: 150px;
-  padding: 8px 15px;
-  visibility: visible;
-  opacity: 0.7;
-}
 
 .login {
   text-shadow: none;
@@ -305,11 +362,14 @@ h1 {
   clear: both;
 }
 
+.html {
+  background-color: gray;
+}
+
 body {
-  position: relative;
+  /* position: relative; */
   text-align: center;
-  background-image: url('https://wallpaperaccess.com/full/2200501.jpg');
-  background-attachment: fixed;
+  background-color: darkgreen;
   height: 100vh;
   padding: 0;
   margin: 0;
@@ -325,8 +385,6 @@ body {
     -0.05em 0.05em black,
     0.05em -0.05em black,
     0.05em 0.05em black;
-  /* color offset-x offset-y blur-radius */
-
 }
 
 .page-container {
@@ -338,5 +396,7 @@ body {
   bottom: 0;
   width: 100%;
   height: fit-content;
-  background-color: black;
+  background-color: green;
+  outline: 1px black solid;
+  font-size: large;
 }

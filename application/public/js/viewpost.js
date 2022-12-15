@@ -1,4 +1,3 @@
-
 function addNewComment(data) {
   let commentList = document.querySelector("comment-list");
   let newComment = document.createElement('template');
