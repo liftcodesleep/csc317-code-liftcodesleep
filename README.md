@@ -8,5 +8,5 @@ The site is intended as an image hosting website with support for user registrat
 npm install
 
 ## Run Instructions
-from /application
+from /application</br>
 npm start
